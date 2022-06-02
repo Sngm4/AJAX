@@ -1,29 +1,31 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Emails</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Object</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @emails.each do |email| %>
-      <tr>
-        <td><%= email.object %></td>
-        <td><%= email.body %></td>
-        <td><%= link_to 'Show', email %></td>
-        <td><%= link_to 'Edit', edit_email_path(email) %></td>
-        <td><%= link_to 'Destroy', email, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<h1 style='text-align: center'>Gmail de wish</h1>
+<div class='container' style='mg-5'>
+  <div class="form">
+    <%= form_tag(emails_path, method: :post, class: "form", remote: true) do %>
+      <%= submit_tag 'create', :name => 'commit'%>
     <% end %>
-  </tbody>
-</table>
-
+  </div>
+</div>
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-4'>
+      <h2>Liste de emails</h2>
+      <ul id='email-list'>
+        <% @emails.each do |email| %>
+          <li><%= link_to email.object, email_path(email) %></li>
+          <!-- <td><%= link_to 'Show', email %></td>
+              <td><%= link_to 'Edit', edit_email_path(email) %></td>
+              <td><%= link_to 'Destroy', email, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            -->
+          <hr>
+        <% end %>
+      </ul>
+    </div>
+    <div class='col-md-8'>
+      <h2>Emails sélectionnés</h2>
+    </div>
+  </div>
+</div>
 <br>
-
 <%= link_to 'New Email', new_email_path %>
