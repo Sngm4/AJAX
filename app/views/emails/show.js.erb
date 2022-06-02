@@ -1,3 +1,8 @@
 document.getElementById("email-show").innerHTML = "";
 
 document.getElementById("email-show").insertAdjacentHTML("beforeend", "<%= j render 'show_email', email: @email %>")
+
+
+<%= id = "email_#{@email.id}" %>
+
+document.getElementById("<%= id %>").style.backgroundColor = "green";

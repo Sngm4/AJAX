@@ -13,22 +13,22 @@
       <h2>Liste de emails</h2>
       <ul id='email-list'>
         <% @emails.each do |email| %>
-          <li id='email_<%= email.id %>'><%= link_to email.object, email_path(email), remote: true %>
-            <hr>
-          </li>
-          <!-- <td><%= link_to 'Show', email %></td>
-              <td><%= link_to 'Edit', edit_email_path(email) %></td>
-              <td><%= link_to 'Destroy', email, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            -->
-        <% end %>
-      </ul>
-    </div>
-    <div class='col-md-8'>
-      <h2>Emails sélectionnés</h2>
-      <ul id='email-show'>
-      </ul>
+          <% if email.read == true %>
+            <li style='background-color: green' id='email_<%= email.id %>'><%= link_to email.object, email_path(email), remote: true %>
+            <%else%>
+              <li id='email_<%= email.id %>'><%= link_to email.object, email_path(email), remote: true %>
+              <% end %>
+              <hr>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class='col-md-8'>
+        <h2>Emails sélectionnés</h2>
+        <ul id='email-show'>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
-<br>
-<%= link_to 'New Email', new_email_path %>
+  <br>
+  <%= link_to 'New Email', new_email_path %>

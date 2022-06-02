@@ -9,7 +9,14 @@ class EmailsController < ApplicationController
   # GET /emails/1 or /emails/1.json
   def show
     @email = Email.find(params[:id])
-    @email.update(read: params[:status])
+    if @email.read == false
+      @email.update(read: !@email.read)
+    end
+
+    # @email.update
+    puts '*'*50
+    puts @email.read
+    puts '*'*50
 
     respond_to do |format|
         format.html { redirect_to emails_path}
@@ -50,9 +57,8 @@ class EmailsController < ApplicationController
     @email = Email.find(params[:id])
     @email.update(read: !@email.read)
 
-
     respond_to do |format|
-        format.html { redirect_to email_url(@email), notice: "Email was successfully updated." }
+        format.html { redirect_to emails_path, notice: "Email was successfully updated." }
         format.js {}
     end
   end
