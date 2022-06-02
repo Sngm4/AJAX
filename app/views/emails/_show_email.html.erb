@@ -1,0 +1,21 @@
+      
+  <p>
+    <strong>Object:</strong>
+    <%= @email.object %>
+  </p>
+  <p>
+    <strong>Body:</strong>
+    <%= @email.body %>
+  </p>
+
+  <div class="form">
+    <%= form_tag(email_path, method: :delete, class: "form", remote: true, data: { confirm: 'Are you sure?' }) do %>
+      <%= submit_tag 'Supprimer', :name => 'commit'%>
+    <% end %>
+  </div>
+
+    <div class="form">
+    <%= form_tag(email_path, method: :post, class: "form", remote: true) do %>
+      <%= submit_tag 'Marquer comme non lu', :name => 'commit'%>
+    <% end %>
+  </div>

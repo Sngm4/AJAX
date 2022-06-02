@@ -1,0 +1,3 @@
+document.getElementById("email-show").innerHTML = "";
+
+document.getElementById("email-show").insertAdjacentHTML("beforeend", "<%= j render 'show_email', email: @email %>")

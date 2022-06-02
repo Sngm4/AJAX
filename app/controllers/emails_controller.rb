@@ -8,6 +8,11 @@ class EmailsController < ApplicationController
 
   # GET /emails/1 or /emails/1.json
   def show
+    respond_to do |format|
+        format.html { redirect_to emails_path}
+        # format.json { render :show, status: :created, location: @email }
+        format.js{}
+    end
   end
 
   # GET /emails/new
@@ -56,7 +61,7 @@ class EmailsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to emails_url, notice: "Email was successfully destroyed." }
-      format.json { head :no_content }
+      format.js {}
     end
   end
 
