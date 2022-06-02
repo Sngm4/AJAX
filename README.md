@@ -1,24 +1,20 @@
-# README
+# AJAX
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Table of contents
+* [General info](#general-info)
+* [Technologies](#technologies)
+* [Sources](#sources)
 
-Things you may want to cover:
+## General info
+Réalisation du Gmail de Wish
 
-* Ruby version
 
-* System dependencies
+## Technologies
+Project is created with:
+* HTML
+* JS
 
-* Configuration
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Sources
+Ce kit UI a été créé avec l'aide de [The Hacking Project](https://www.thehackingproject.org) et réalisé par [Sngm4](https://github.com/Sngm4) & [MatthiasBlc](https://github.com/MatthiasBlc).
